@@ -1,0 +1,58 @@
+import type { GalleryItem } from '../types';
+
+export const galleryItems: GalleryItem[] = [
+  {
+    id: 'garden-courtyard-dusk',
+    title: 'Family Garden Dining at Dusk',
+    category: 'ambience',
+    src: '/images/hero-garden.jpg',
+    alt: 'Outdoor garden dining setup with lantern lighting, family tables, and lush green plants',
+    caption: 'Atmospheric evening view of the garden dining area illuminated by warm lanterns and fairy lights.',
+    isAuthenticRepresentation: true,
+  },
+  {
+    id: 'special-biryani-handi',
+    title: 'Abhiruchi Special Biryani Preparation',
+    category: 'food',
+    src: '/images/special-biryani.jpg',
+    alt: 'Authentic Indian chicken biryani served in traditional brass handi with boiled egg and raita',
+    caption: 'Candidate featured dish: Fragrant dum-cooked basmati rice with aromatic spices and tender cuts, noted in diner feedback.',
+    isAuthenticRepresentation: true,
+  },
+  {
+    id: 'private-dining-cabins',
+    title: 'Private Family Dining Cabins',
+    category: 'cabins',
+    src: '/images/private-cabins.jpg',
+    alt: 'Private family dining booth with wooden lattice screens and comfortable seating',
+    caption: 'Private family cabins providing privacy for family gatherings (subject to confirmation and availability).',
+    isAuthenticRepresentation: true,
+  },
+  {
+    id: 'chicken-grill-kebabs',
+    title: 'Chicken Grill Specialty',
+    category: 'food',
+    src: '/images/chicken-grill.jpg',
+    alt: 'Charred grilled chicken skewers served with fresh lemon wedges, sliced onions, and mint chutney',
+    caption: 'Candidate featured dish: Chicken Grill with smoky char marks, mint chutney, and onion rings.',
+    isAuthenticRepresentation: true,
+  },
+  {
+    id: 'illuminated-walkway',
+    title: 'Lush Garden Path & Dining Pavilions',
+    category: 'ambience',
+    src: '/images/garden-walkway.jpg',
+    alt: 'Illuminated stone path through lush garden greenery leading to dining gazebos',
+    caption: 'Stone pathway surrounded by bougainvillea and palms, leading to covered dining pavilions.',
+    isAuthenticRepresentation: true,
+  },
+  {
+    id: 'tandoori-bread-spread',
+    title: 'Tandoori Starter Spread & Breads',
+    category: 'food',
+    src: '/images/tandoori-platter.jpg',
+    alt: 'Brass thali with assorted grilled paneer tikka, kebabs, butter naans, and dips',
+    caption: 'Appetizer candidate spread: Hot clay-oven breads and skewered tandoori starters.',
+    isAuthenticRepresentation: true,
+  },
+];

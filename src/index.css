@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+@theme {
+  --color-burgundy: #481D26;
+  --color-burgundy-rich: #39141D;
+  --color-wine: #241116;
+  --color-wine-dark: #1A0B0F;
+  --color-ivory: #F8F3E9;
+  --color-ivory-light: #FCF9F3;
+  --color-ivory-warm: #F4EDE0;
+  --color-gold: #C5A46D;
+  --color-gold-light: #DFC698;
+  --color-gold-dark: #9F7E46;
+  --color-sage: #858D73;
+  --color-sage-light: #A3AB90;
+  --color-charcoal: #252321;
+  --color-charcoal-light: #3D3936;
+  --color-charcoal-dark: #171514;
+
+  --font-serif: "Cormorant Garamond", Georgia, Cambria, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #F8F3E9;
+  color: #252321;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom Serif heading typography */
+.font-display {
+  font-family: var(--font-serif);
+}
+
+/* Luxury Metallic Gold Text Gradient */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #DFCEAB 0%, #C5A46D 50%, #9F7E46 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Authentic Indian Jali Lattice Pattern (Replaces AI dot grid) */
+.bg-jali-dark {
+  background-color: #241116;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(72, 29, 38, 0.7) 0%, transparent 70%),
+    radial-gradient(circle at 85% 85%, rgba(197, 164, 109, 0.08) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 0 L48 24 L24 48 L0 24 Z M24 6 L42 24 L24 42 L6 24 Z' fill='none' stroke='%23C5A46D' stroke-width='0.75' stroke-opacity='0.08'/%3E%3Ccircle cx='24' cy='24' r='3' fill='none' stroke='%23C5A46D' stroke-width='0.75' stroke-opacity='0.12'/%3E%3C/svg%3E");
+}
+
+.bg-jali-light {
+  background-color: #F8F3E9;
+  background-image: 
+    radial-gradient(ellipse at 50% 100%, rgba(197, 164, 109, 0.06) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28 0 L56 28 L28 56 L0 28 Z M28 8 L48 28 L28 48 L8 28 Z' fill='none' stroke='%23481D26' stroke-width='0.6' stroke-opacity='0.035'/%3E%3Ccircle cx='28' cy='28' r='4' fill='none' stroke='%23C5A46D' stroke-width='0.6' stroke-opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* Warm Parchment / Linen Microtexture for physical warmth */
+.parchment-texture {
+  background-image: radial-gradient(rgba(197, 164, 109, 0.04) 1px, transparent 0);
+  background-size: 16px 16px;
+}
+
+/* Heritage Indian Architectural Corner Border */
+.heritage-card {
+  position: relative;
+  border: 1px solid rgba(197, 164, 109, 0.25);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.heritage-card::before,
+.heritage-card::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: #C5A46D;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.heritage-card::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid #C5A46D;
+  border-left: 2px solid #C5A46D;
+}
+
+.heritage-card::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid #C5A46D;
+  border-right: 2px solid #C5A46D;
+}
+
+.heritage-card:hover {
+  border-color: rgba(197, 164, 109, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -8px rgba(36, 17, 22, 0.12);
+}
+
+.heritage-card:hover::before,
+.heritage-card:hover::after {
+  width: 14px;
+  height: 14px;
+}
+
+/* Subtle Shimmer Effect on CTA Buttons */
+@keyframes shimmer-sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.shimmer-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%) skewX(-20deg);
+  pointer-events: none;
+}
+
+.shimmer-button:hover::after {
+  animation: shimmer-sweep 1.2s ease-in-out infinite;
+}
+
+/* Drifting Garden Fireflies / Light Embers */
+@keyframes float-ember-1 {
+  0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.3; }
+  50% { transform: translateY(-30px) translateX(15px) scale(1.4); opacity: 0.8; }
+}
+
+@keyframes float-ember-2 {
+  0%, 100% { transform: translateY(0) translateX(0) scale(1.2); opacity: 0.25; }
+  50% { transform: translateY(-45px) translateX(-20px) scale(0.8); opacity: 0.75; }
+}
+
+.ember-1 {
+  animation: float-ember-1 7s ease-in-out infinite;
+}
+
+.ember-2 {
+  animation: float-ember-2 9s ease-in-out infinite 2s;
+}
+
+/* Accessibility Focus Indicator */
+*:focus-visible {
+  outline: 2px solid #C5A46D;
+  outline-offset: 3px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #241116;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A46D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #DFC698;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
